@@ -1,36 +1,64 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Thief Detection Alarm
 
-## Getting Started
+This project is a web-based security application designed to detect intruders and trigger an alarm. It leverages AI and webcam integration for real-time monitoring, providing an effective solution to detect and alert users to unauthorized access.
 
-First, run the development server:
+## Technologies Used
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Next.js**: For optimized, server-rendered React-based application.
+- **React**: To build a responsive and interactive UI.
+- **Tailwind CSS**: For custom styling and a modern design.
+- **JavaScript**: Core language for detection logic and interactivity.
+- **TensorFlow.js**: For real-time object detection using machine learning in the browser.
+- **React Webcam**: To capture real-time webcam video feed within the application.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Features
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+- **Real-time Object Detection**: Uses TensorFlow.js for detecting movement and specific objects in real-time.
+- **Alarm System**: Triggers an audio alarm when suspicious activity is detected.
+- **Modular Interface**: Built with a modular structure for easy customization.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Project Structure
 
-## Learn More
+- **/app**: Contains the core files for layout, global styles, and the main page.
+- **/components**: Houses \`object-detection.js\`, the main component responsible for integrating TensorFlow and handling the webcam feed.
+- **/utils**: Contains utility scripts, such as \`render-prediction.js\`, used for rendering detection results on the video feed.
+- **/public**: Includes static assets such as images and audio files for the alarm.
 
-To learn more about Next.js, take a look at the following resources:
+## Installation
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. **Clone the Repository**
+   \`\`\`bash
+   git clone <repository-url>
+   cd Thief_Detection_Alarm-main
+   \`\`\`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+2. **Install Dependencies**
+   \`\`\`bash
+   npm install
+   \`\`\`
 
-## Deploy on Vercel
+3. **Run the Application**
+   \`\`\`bash
+   npm run dev
+   \`\`\`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Dependencies
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- **TensorFlow.js**: Used in \`object-detection.js\` for processing video frames and detecting objects.
+- **React Webcam**: Allows the application to access the device camera directly.
+- **render-prediction.js**: A custom utility function to render prediction boxes on detected objects.
+
+## Configuration
+
+- **Object Detection**: Configurable in \`object-detection.js\` to adjust model parameters.
+- **Audio Alarm**: Customizable audio file located in \`/public\`.
+
+## Usage
+
+1. Start the application.
+2. Monitor the display for any detected objects.
+3. The alarm will activate upon detecting unauthorized objects.
+
+## License
+
+This project is licensed under the MIT License.
